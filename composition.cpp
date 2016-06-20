@@ -923,7 +923,7 @@ int main(int argc, char*argv[])
   {
    auto saxpy  /* (a,x,y) = a*x+y */ = add(mul(_1,_2),_3);
    auto saxpy1 /* (a,x) = a*x+a */ = add(mul(_1,_2),_1);
-   auto saxpy2  /* (x) = a*x+x */ = add(mul(_1,_2),mul(_1,_2));
+   auto saxpy2  /* (x) = a*x+x */ = add(mul(_1,_2),mul(_1,add(mul(_1,_2),_2)));
    auto val = saxpy(argc*2.0,3.0,4.0);
    auto val1 = saxpy1(argc*2.0,3.0);
    auto val2 = saxpy2(2,3);
